@@ -1,0 +1,138 @@
+%html
+  %head
+    %title Rejex: the JavaScript regular expression editor
+    %link{ :href => "/main.css", :rel => "stylesheet", :type => "text/css" }
+    %script{ :src => "/javascripts/lib/jquery.js", :type => "text/javascript" }
+    %script{ :src => "/javascripts/pattern_matcher.js", :type => "text/javascript" }
+    %script{ :src => "/javascripts/app.js", :type => "text/javascript" }
+  %body
+    #header
+      %h1 Rejex
+      %h2 the JavaScript regular expression editor
+    #main
+      %form
+        %label{ :for => "expression", :id => "expression_label", :class => "inline" } Your Regular Expression
+        %input{ :type => "text", :id => "expression" }
+        %input{ :type => "text", :id => "options" }
+        %label{ :for => "options", :id => "options_label", :class => "inline" } Options
+        %ul{ :id => "options_help" }
+          %li
+            %span.code i
+            %span case insensitive matching
+          %li
+            %span.code g
+            %span global matching
+          %li
+            %span.code m
+            %span multiline matching
+          
+        %label{ :for => "test_string", :id => "test_string_label", :class => "inline" } Your Test String
+        %textarea{ :id => "test_string" }
+        #matches 
+          %span{ :id => "matches_label" } Match Result
+    
+    #reference
+      %h2 Quick Reference
+      %table{ :class => "right"}
+        %tbody
+          %tr
+            %td.code [abc]
+            %td Find any character between the brackets
+          %tr
+            %td.code [^abc]
+            %td Find any character not between the brackets
+          %tr
+            %td.code [a-z]
+            %td Find any character from a to z
+          %tr
+            %td.code [a-Z]
+            %td Find any character from a to Z
+          %tr
+            %td.code [a|b|c]
+            %td Find any of the alternatives specified
+          %tr
+            %td.code .
+            %td Find a single char, except newline or line terminator
+          %tr
+            %td.code \w
+            %td Find a word character
+          %tr
+            %td.code \W
+            %td Find a non-word character
+          %tr
+            %td.code \d
+            %td Find a digit
+          %tr
+            %td.code \D
+            %td Find a non-digit character
+          %tr
+            %td.code \s
+            %td Find a whitespace character
+          %tr
+            %td.code \S
+            %td Find a non-whitespace character
+          %tr
+            %td.code \b
+            %td Find a match at the beginning/end of a word
+          %tr
+            %td.code \B
+            %td Find a match not at the beginning/end of a word
+          %tr
+            %td.code \0
+            %td Find a null character
+          %tr
+            %td.code \n
+            %td Find a new line character
+      %table
+        %tbody
+          %tr
+            %td.code \f
+            %td Find a form feed character
+          %tr
+            %td.code \r
+            %td Find a carriage return character
+          %tr
+            %td.code \t
+            %td Find a tab character
+          %tr
+            %td.code \v
+            %td Find a vertical tab character
+          %tr
+            %td.code \xxx
+            %td Find the character specified by the octal number xxx
+          %tr
+            %td.code \xdd
+            %td Find the character specified by the hex number dd
+          %tr
+            %td.code \uxxxx
+            %td Find the unicode character specified by hex number xxxx
+          %tr
+            %td.code n+
+            %td Matches any string that contains at least one n
+          %tr
+            %td.code n*
+            %td Matches any string that contains zero or more occurrences of n
+          %tr
+            %td.code n?
+            %td Matches any string that contains zero or one occurrences of n
+          %tr
+            %td.code n{X}
+            %td Matches any string that contains a sequence of X n's
+          %tr
+            %td.code n{X,Y}
+            %td Matches any string that contains a sequence of X or Y n's
+          %tr
+            %td.code n{X,}
+            %td Matches any string that contains a sequence of at least X n's
+          %tr
+            %td.code n$
+            %td Matches any string with n at the end
+          %tr
+            %td.code ^n
+            %td Matches any string with n at the beginning
+          %tr
+            %td.code ?=n
+            %td Matches any string that is followed by a specific string n
+          %tr
+            %td.code ?!n
+            %td Matches any string that is not followed by a specific string n
