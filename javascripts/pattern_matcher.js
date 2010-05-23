@@ -30,7 +30,7 @@ PatternMatcher.prototype = {
         return "No Match";
       };      
     } else {
-      return "Invalid regular expression";
+      return "<span class='error'>Invalid regular expression</span>";
     };
   }
 }
