@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  // translate the page if required
+  var t = new Translator()
+  t.translate()
+
+
   $('input, textarea').inlineLabels();
 
   // display the options help
