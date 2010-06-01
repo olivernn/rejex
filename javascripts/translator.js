@@ -2,19 +2,13 @@ Translator = function () {
   this.translatorCounter = 0
   this.phraseCount = 4
   this.text = {
-    expression_label: {
-      en: 'Your Regular Expression'
-    },
-    options_label: {
-      en: 'Options'
-    },
-    test_string_label:{
-      en: 'Your Test String'
-    },
-    matches_label: {
-      en: 'Match Result'
+    en: {
+      expression_label: 'Your Regular Expression',
+      options_label: 'Options',
+      test_string_label: 'Your Test String',
+      matches_label: 'Match Result'
     }
-  };
+  }
 }
 
 Translator.prototype = {
@@ -28,18 +22,18 @@ Translator.prototype = {
   displayTranslation: function () {
     var self = this
     if (self.translationCount == self.phraseCount) {
-      $.each(this.text, function (id, dictionary) {
-        $('#' + id).text(self.text[id][self.language])
+      $.each(this.text[this.language], function (id, translatedString) {
+        $('#' + id).text(translatedString)
       })
     };
   },
 
   performTranslation: function () {
     var self = this
-    $.each(this.text, function (id, dictionary) {
-      google.language.translate(dictionary.en, 'en', self.language, function (result) {
+    $.each(this.text['en'], function (id, englishString) {
+      google.language.translate(englishString, 'en', self.language, function (result) {
         if (!result.error) {
-          self.text[id][self.language] = result.translation
+          self.text[self.language][id] = result.translation
           self.translationCount++
           self.displayTranslation();
         };
@@ -50,6 +44,7 @@ Translator.prototype = {
   translate: function () {
     this.translationCount = 0
     this.detectLanguage()
+    this.text[this.language] = {}
     this.performTranslation()
   }
 }
