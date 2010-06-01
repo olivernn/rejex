@@ -11,23 +11,26 @@
       %h2 the JavaScript regular expression editor
     #main
       %form
-        %label{ :for => "expression", :id => "expression_label", :class => "inline" } Your Regular Expression
-        %input{ :type => "text", :id => "expression" }
-        %input{ :type => "text", :id => "options" }
-        %label{ :for => "options", :id => "options_label", :class => "inline" } Options
-        %ul{ :id => "options_help" }
-          %li
-            %span.code i
-            %span case insensitive matching
-          %li
-            %span.code g
-            %span global matching
-          %li
-            %span.code m
-            %span multiline matching
-          
-        %label{ :for => "test_string", :id => "test_string_label", :class => "inline" } Your Test String
-        %textarea{ :id => "test_string" }
+        .field_wrap
+          %label{ :for => "expression", :id => "expression_label", :class => "inline" } Your Regular Expression
+          %input{ :type => "text", :id => "expression" }
+          %input{ :type => "text", :id => "options" }
+          %label{ :for => "options", :id => "options_label", :class => "inline" } Options
+          %ul{ :id => "options_help" }
+            %li
+              %span.code i
+              %span case insensitive matching
+            %li
+              %span.code g
+              %span global matching
+            %li
+              %span.code m
+              %span multiline matching
+
+        .field_wrap
+          %label{ :for => "test_string", :id => "test_string_label", :class => "inline" } Your Test String
+          %textarea{ :id => "test_string" }
+
         #matches 
           %span{ :id => "matches_label" } Match Result
     

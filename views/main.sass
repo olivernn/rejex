@@ -19,7 +19,7 @@
 
 =inline_labels
   :color #888
-  :position relative
+  :position absolute
   :z-index 2
 
 =round_corners(!radius = 5px)
@@ -43,17 +43,17 @@ input, textarea
 
 #expression_label
   +inline_labels
-  :top 45px
+  :top 27px
   :left 22px
 
 #test_string_label
   +inline_labels
-  :top 40px
+  :top 27px
   :left 25px
 
 #options_label
   +inline_labels
-  :top -41px
+  :top 27px
   :left 770px 
 
 #matches_label
@@ -85,7 +85,13 @@ input, textarea
   +centered
   :width 900px
   :padding 10px
-  
+
+  form
+    :position relative
+
+    .field_wrap
+      :position relative
+
   textarea
     :font-family Helvetica
     :width 875px
@@ -120,9 +126,9 @@ input, textarea
     :list-style none
     :padding 0px
     :margin 0px
-    :position relative
-    :left 460px
-    :top -15px
+    :position absolute
+    :left 465px
+    :top 60px
     :margin-bottom -30px
     :opacity 0
 
