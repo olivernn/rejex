@@ -1,18 +1,5 @@
 $(document).ready(function() {
-  // fade in and out the inline form labels
-  $('input, textarea').focus(function () {
-    var label_id = "#" + $(this).attr('id') + "_label"
-    $(label_id).animate({
-      opacity: 0
-    }, 400);
-  }).blur(function () {
-    var label_id = "#" + $(this).attr('id') + "_label"
-    if (!$(this).val()) {
-      $(label_id).animate({
-        opacity: 1
-      }, 400);
-    };
-  });
+  $('input, textarea').inlineLabels();
 
   // display the options help
   $('#options').focus(function () {
