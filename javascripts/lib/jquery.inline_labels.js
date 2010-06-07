@@ -22,11 +22,9 @@ jQuery.fn.inlineLabels = function() {
     });
 
     $input.keypress(function (event) {
-      if ($input.val() !== '') {
-        $label.animate({
-          opacity: 0
-        }, 50)
-      };
+      $label.animate({
+        opacity: 0
+      }, 50)
     });
 
     $input.blur(function () {
