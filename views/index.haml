@@ -26,13 +26,13 @@
           %ul{ :id => "options_help" }
             %li
               %span.code i
-              %span case insensitive matching
+              %span{ :id => 'case_insensitive_matching'} case insensitive matching
             %li
               %span.code g
-              %span global matching
+              %span{ :id => 'global_matching' } global matching
             %li
               %span.code m
-              %span multiline matching
+              %span{ :id => 'multiline_matching' } multiline matching
 
         .field_wrap
           %label{ :for => "test_string", :id => "test_string_label", :class => "inline" } Your Test String
