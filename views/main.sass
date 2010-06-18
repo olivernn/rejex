@@ -5,6 +5,10 @@
   -webkit-box-shadow= !x !y !blur !colour
   -moz-box-shadow= !x !y !blur !colour
 
+=background-gradient(!colour1 = $green3a, !colour2 = $green3)
+  background= !colour1
+  background= -webkit-gradient(linear, left bottom, left top, color-stop(0.25, !colour2), color-stop(0.76, !colour1))
+  background= -moz-linear-gradient(-90deg, !colour2, !colour2)
 =centered
   :margin-left auto
   :margin-right auto
@@ -38,6 +42,7 @@ input, textarea
   +round_corners
   +borders
   +display_text
+  +background-gradient(#F9F9F9, #FFFFFF)
   :padding 10px
   :margin 10px
 
@@ -104,6 +109,7 @@ input, textarea
     +round_corners
     +borders
     +display_text
+    +background-gradient(#F9F9F9, #FFFFFF)
     :padding 10px
     :margin 10px
     :height 100px
