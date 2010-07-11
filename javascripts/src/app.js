@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // translate the page if required
-  var t = new Translator()
-  t.translate()
+  // var t = new Translator()
+  // t.translate()
 
 
   $('input, textarea').inlineLabels();

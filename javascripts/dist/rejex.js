@@ -283,8 +283,6 @@ Translator.prototype = {
   }
 }
 $(document).ready(function() {
-  var t = new Translator()
-  t.translate()
 
 
   $('input, textarea').inlineLabels();
