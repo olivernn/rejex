@@ -1,174 +1,158 @@
-=borders(!colour = #ccc, !thickness = 1px)
-  :border= !thickness solid !colour
+=borders($colour: #cccccc, $thickness: 1px)
+  border: $thickness solid $colour
 
-=box_shadows(!x = 2px, !y = 2px, !blur = 10px, !colour = #ccc)
-  -webkit-box-shadow= !x !y !blur !colour
-  -moz-box-shadow= !x !y !blur !colour
+=box_shadows($x: 2px, $y: 2px, $blur: 10px, $colour: #cccccc)
+  -webkit-box-shadow: $x $y $blur $colour
+  -moz-box-shadow: $x $y $blur $colour
 
-=background-gradient(!colour1 = $green3a, !colour2 = $green3)
-  background= !colour1
-  background= -webkit-gradient(linear, left bottom, left top, color-stop(0.25, !colour2), color-stop(0.76, !colour1))
-  background= -moz-linear-gradient(-90deg, !colour2, !colour2)
+=background-gradient($colour1: $green3a, $colour2: $green3)
+  background: $colour1
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0.25, $colour2), color-stop(0.76, $colour1))
+  background: -moz-linear-gradient(-90deg, $colour2, $colour2)
+
 =centered
-  :margin-left auto
-  :margin-right auto
+  margin-left: auto
+  margin-right: auto
 
-=display_text(!colour = #333)
-  :color= !colour
-  :font-size= 1.4em
+=display_text($colour: #333333)
+  color: $colour
+  font-size: 1.4em
 
-=heading(!colour = #333)
-  :color= !colour
-  :font-weight bolder
+=heading($colour: #333333)
+  color: $colour
+  font-weight: bolder
 
 =inline_labels
-  :color #888
-  :position absolute
-  :z-index 2
+  color: #888888
+  position: absolute
+  z-index: 2
 
-=round_corners(!radius = 5px)
-  border-radius= !radius
-  -moz-border-radius= !radius
-  -webkit-border-radius= !radius
+=round_corners($radius: 5px)
+  border-radius: $radius
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
 
 =text_shadow
-  :text-shadow 5px 5px 10px #ccc
+  text-shadow: 5px 5px 10px #cccccc
 
 body
-  :font-family Helvetica
-
+  font-family: Helvetica
 
 input, textarea
   +round_corners
   +borders
   +display_text
-  +background-gradient(#F9F9F9, #FFFFFF)
-  :padding 10px
-  :margin 10px
+  +background-gradient(#f9f9f9, white)
+  padding: 10px
+  margin: 10px
 
 #expression_label
   +inline_labels
-  :top 27px
-  :left 22px
+  top: 27px
+  left: 22px
 
 #test_string_label
   +inline_labels
-  :top 27px
-  :left 25px
+  top: 27px
+  left: 25px
 
 #options_label
   +inline_labels
-  :top 27px
-  :left 770px 
+  top: 27px
+  left: 770px
 
 #matches_label
-  :font-size 0.8em
-  :color #888
+  font-size: 0.8em
+  color: #888888
 
 #wrap
   +centered
 
 #header
   +centered
-  :width 900px
-  :margin-bottom 20px
-
+  width: 900px
+  margin-bottom: 20px
   h1
     +text_shadow
     +heading
-    :font-size 3em
-    :display inline
-
+    font-size: 3em
+    display: inline
   h2
     +text_shadow
     +heading
-    :font-size 1em
-    :display inline
-    :margin-left 10px
+    font-size: 1em
+    display: inline
+    margin-left: 10px
 
 #main
   +round_corners
   +borders
   +box_shadows
   +centered
-  :width 900px
-  :padding 10px
-
+  width: 900px
+  padding: 10px
   form
-    :position relative
-
+    position: relative
     .field_wrap
-      :position relative
-
+      position: relative
   textarea
-    :font-family Helvetica
-    :width 875px
-    :height 100px
-
+    font-family: Helvetica
+    width: 875px
+    height: 100px
   #matches
     +round_corners
     +borders
     +display_text
-    +background-gradient(#F9F9F9, #FFFFFF)
-    :padding 10px
-    :margin 10px
-    :height 100px
-    :width 855px
-
+    +background-gradient(#f9f9f9, white)
+    padding: 10px
+    margin: 10px
+    height: 100px
+    width: 855px
     span
-      :padding 2px
-
+      padding: 2px
     .match
-      :background-color #ff0
-
+      background-color: yellow
     .error
-      :background-color #f00
-      :color #fff
-
+      background-color: red
+      color: white
   #expression
-    :width 725px
-
+    width: 725px
   #options
-    :width 120px
-
+    width: 120px
   #options_help
-    :list-style none
-    :padding 0px
-    :margin 0px
-    :position absolute
-    :left 465px
-    :top 60px
-    :margin-bottom -30px
-    :opacity 0
-
+    list-style: none
+    padding: 0px
+    margin: 0px
+    position: absolute
+    left: 465px
+    top: 60px
+    margin-bottom: -30px
+    opacity: 0
     li
-      :color #333
-      :font-size 0.8em
-      :display inline
-      :padding-right 10px
+      color: #333333
+      font-size: 0.8em
+      display: inline
+      padding-right: 10px
 
 #reference
   +round_corners
   +borders
   +box_shadows
   +centered
-  :margin-top 20px
-  :width 900px
-  :padding 10px
-  :clear both
-
+  margin-top: 20px
+  width: 900px
+  padding: 10px
+  clear: both
   h2
     +heading
     +text_shadow
-
   table
-    :font-size 0.9em
-
+    font-size: 0.9em
   table.right
-    :float right
-    :padding-left 30px
-    :border-left 1px solid #ccc
+    float: right
+    padding-left: 30px
+    border-left: 1px solid #cccccc
 
 .code
-  :font-family Courier
-  :font-weight bold
+  font-family: Courier
+  font-weight: bold
