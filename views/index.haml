@@ -1,4 +1,4 @@
-%html
+%html{ :manifest => '/cache.manifest' }
   %head
     %title Rejex: the JavaScript regular expression editor
     %link{ :href => "/main.css", :rel => "stylesheet", :type => "text/css" }
@@ -13,7 +13,7 @@
 
     %script{ :src => 'http://www.google.com/jsapi', :type => 'text/javascript' }
     :javascript
-      google.load("language", 1)
+      window.applicationCache.updateReady = function () { window.applicationCache.swapCache() }
 
   %body
     #wrap
