@@ -1,2 +1,3 @@
 sinatra --version 1.0
-haml
+haml --version 3.0.4
+grit
