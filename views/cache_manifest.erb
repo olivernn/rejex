@@ -4,7 +4,15 @@ NETWORK:
 http://www.google-analytics.com/ga.js
 CACHE:
 /favicon.ico
+<% if Sinatra::Application.environment == :production %>
 /javascripts/dist/rejex.min.js
+<% else %>
+/javascripts/src/lib/jquery.js
+/javascripts/src/lib/jquery.inline_labels.js
+/javascripts/src/pattern_matcher.js
+/javascripts/src/translator.js
+/javascripts/src/app.js
+<% end %>
 /main.css
 http://www.google.com/jsapi
 http://www.google.com/uds/?file=language&v=1
