@@ -3,7 +3,6 @@
  *
  *  Released under MIT license.
  */
-//= require "lib/jquery.js"
 //= require "lib/jquery.inline_labels.js"
 //= require "pattern_matcher.js"
 //= require "translator.js"
