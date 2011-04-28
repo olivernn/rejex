@@ -1,9 +1,8 @@
-%html{ :manifest => '/cache.manifest' }
+%html
   %head
     %title Rejex: the JavaScript regular expression editor
     %link{ :href => "/main.css", :rel => "stylesheet", :type => "text/css" }
       %script{ :src => "/javascripts/src/lib/jquery.js", :type => "text/javascript" }
-      %script{ :src => "http://js-error.heroku.com/projects/4cf141a21ad87612ac000002/tracker/alpha-2.js", :type => "text/javascript" }
     - if Sinatra::Application.environment == :production
       %script{ :src => "javascripts/dist/rejex.min.js" }
     - else
