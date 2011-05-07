@@ -21,7 +21,6 @@ get '/main.css' do
 end
 
 get '/cache.manifest' do
-  cache_control :public => true, :max_age => 2629743
   content_type 'text/cache-manifest'
   if Sinatra::Application.environment == :production
     @version = ENV['COMMIT_HASH']
