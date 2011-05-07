@@ -2,19 +2,16 @@ CACHE MANIFEST
 # version: <%= @version %>
 NETWORK:
 http://www.google-analytics.com/ga.js
-http://js-error.heroku.com/projects/4cf141a21ad87612ac000002/tracker/alpha-2.js
 CACHE:
 /favicon.ico
-/javascripts/src/lib/jquery.js
 <% if Sinatra::Application.environment == :production %>
 /javascripts/dist/rejex.min.js
 <% else %>
+/javascripts/src/vendor/jquery-1.6.min.js
+/javascripts/src/vendor/augment-0.1.0.min.js
 /javascripts/src/lib/jquery.inline_labels.js
 /javascripts/src/pattern_matcher.js
-/javascripts/src/translator.js
 /javascripts/src/app.js
 <% end %>
 /main.css
-http://www.google.com/jsapi
-http://www.google.com/uds/?file=language&v=1
 http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png
