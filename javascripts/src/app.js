@@ -26,7 +26,14 @@ $(document).ready(function() {
         testString: $('#test_string').val(),
         regExpOptions: $('#options').val()
       });
-      $('#matches').html(p.highlight());
+
+      $('#matches_text').html(p.highlight());
+      $("#matches_label").hide()
+
+      var groups = $("#captured").empty()
+      p.matches().forEach(function (group) {
+        groups.append("<li>" + group + "</li>")
+      })
     };
   })
 });

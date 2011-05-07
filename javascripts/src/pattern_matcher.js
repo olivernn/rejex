@@ -32,5 +32,13 @@ PatternMatcher.prototype = {
     } else {
       return "<span class='error'>Invalid regular expression</span>";
     };
+  },
+
+  matches: function () {
+    if (this.valid) {
+      return Array.wrap(this.regExp.exec(this.testString)).filter(function (str, idx) {
+        return (idx > 0)
+      })
+    };
   }
 }
