@@ -1,4 +1,4 @@
-/*  Rejex JavaScript Application, version 841b2d75743a21f7db5e6b050896af85a0b67ef7
+/*  Rejex JavaScript Application, version a99108ac87983e507bd79a8cc037ce0f55b0ae80
  *  (c) 2010 Oliver Nightingale
  *
  *  Released under MIT license.
@@ -77,6 +77,59 @@ jQuery.fn.inlineLabels = function() {
     });
   });
 };
+;(function($){
+  $.fn.autoScaleFontSize = function(options) {
+
+    var defaults = {
+      minFontSize: 9
+    }
+
+    var settings = $.extend({}, defaults, options)
+
+    var input = $(this)
+    var div = $('<div>', {'id': ['autoScaleFontSize', new Date ().valueOf()].join('-')})
+
+    var inputFontSize = parseInt(input.css("font-size"), 10)
+
+    var decrementWithLimit = function (number, limit) {
+      var number = parseInt(number, 10)
+      var limit = limit || 10
+      return --number > limit ? number : limit
+    }
+
+    var incrementWithLimit = function (number, limit) {
+      var number = parseInt(number, 10)
+      var limit = limit || 10
+      return ++number > limit ? limit : number
+    }
+
+    div.css({
+      'position': 'absolute',
+      'visibility': 'hidden',
+      'height': 'auto',
+      'width': 'auto'
+    })
+
+    $('body').append(div)
+
+    input.css({
+      'width': input.outerWidth(),
+      'height': input.outerHeight()
+    })
+
+    input.bind('keyup', function () {
+      var fontSize = input.css('font-size')
+      div.text(input.val())
+      if (div.width() > 0.8 * input.width()) {
+        input.css("font-size", decrementWithLimit(fontSize, settings.minFontSize))
+        div.css("font-size", decrementWithLimit(fontSize, settings.minFontSize))
+      } else if (div.width() < 0.7 * input.width()) {
+        input.css("font-size", incrementWithLimit(fontSize, inputFontSize))
+        div.css("font-size", incrementWithLimit(fontSize, inputFontSize))
+      };
+    })
+  };
+})(jQuery);
 PatternMatcher = function (options) {
   this.regExpOptions = options.regExpOptions || ""
   this.pattern = options.pattern || "";

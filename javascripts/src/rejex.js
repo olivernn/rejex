@@ -7,5 +7,6 @@
 //= require "vendor/jquery-1.6.min.js"
 //= require "lib/extensions.js"
 //= require "lib/jquery.inline_labels.js"
+//= require "lib/jquery.autoSizeFontSize.js"
 //= require "pattern_matcher.js"
 //= require "app.js"
