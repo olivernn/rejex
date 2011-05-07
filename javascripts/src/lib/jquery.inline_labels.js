@@ -21,10 +21,10 @@ jQuery.fn.inlineLabels = function() {
       };
     });
 
-    $input.keypress(function (event) {
-      $label.animate({
-        opacity: 0
-      }, 50)
+    $input.bind('keydown keyup', function (event) {
+      if ($input.val()) {
+        $label.css('opacity', 0)
+      };
     });
 
     $input.blur(function () {
