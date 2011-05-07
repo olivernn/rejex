@@ -1,10 +1,6 @@
 $(document).ready(function() {
-  // translate the page if required
-  // var t = new Translator()
-  // t.translate()
-
-
-  $('input, textarea').inlineLabels();
+  $('input, textarea').inlineLabels()
+  $('#expression').autoScaleFontSize()
 
   // display the options help
   $('#options').focus(function () {
